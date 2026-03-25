@@ -10,7 +10,7 @@ function App() {
   const runFlow = async () => {
     try {
       const res = await axios.post("https://mern-ai-app-3rzu.onrender.com/api/ask-ai", {
-        prompt: prompt,
+        prompt,
       });
 
       setResponse(res.data.answer);
