@@ -15,7 +15,6 @@ function App() {
 
       setResponse(res.data.answer);
     } catch (error) {
-      console.error(error);
       alert("Error calling AI API");
     }
   };
