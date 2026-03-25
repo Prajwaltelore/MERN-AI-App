@@ -3,7 +3,7 @@ import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
-import { connect } from "mongoose";
+import mongoose from "mongoose";
 
 import flow from "./models/flowDetails.js";
 const app = express();
@@ -54,9 +54,10 @@ app.post("/api/save", async (req, res) => {
   res.json({ message: "Saved successfully" });
 });
 
-connect("mongodb://localhost:27017/aiFlow");
-
-console.log("MongoDB connected");
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log(err));
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
