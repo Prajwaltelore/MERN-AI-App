@@ -9,7 +9,7 @@ function App() {
 
   const runFlow = async () => {
     try {
-      const res = await axios.post("https://mern-ai-app-3rzu.onrender.com/api/ask-ai", {
+      const res = await axios.post("https://mern-ai-app-n.onrender.com/api/ask-ai", {
         prompt,
       });
 
@@ -21,7 +21,7 @@ function App() {
 
   const saveFlow = async () => {
     try {
-      await axios.post("https://mern-ai-app-3rzu.onrender.com/api/save", {
+      await axios.post("https://mern-ai-app-n.onrender.com/api/save", {
         prompt: prompt,
         response: response,
       });
