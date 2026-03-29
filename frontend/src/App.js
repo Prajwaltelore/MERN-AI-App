@@ -9,11 +9,11 @@ function App() {
 
   const runFlow = async () => {
     try {
-      const res = await axios.post("https://mern-ai-app-n.onrender.com/api/ask-ai", {
+      const response = await axios.post("https://mern-ai-app-n.onrender.com/api/ask-ai", {
         prompt,
       });
 
-      setResponse(res.data.answer);
+      setResponse(response.data.answer);
     } catch (error) {
       alert("Error calling AI API");
     }
